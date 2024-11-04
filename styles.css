@@ -1,0 +1,33 @@
+body {
+    width: 200px;
+    padding: 10px;
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+input[type="range"] {
+    width: 100%;
+    margin-top: 10px; /* Add some space above the slider */
+}
+
+#volumeText {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+/* Dark Mode and Light Mode Styles */
+body.light-mode {
+    background-color: white;
+    color: black;
+}
+
+body.dark-mode {
+    background-color: #222;
+    color: white;
+}
+
+/* Add space below the toggle */
+label {
+    margin-bottom: 10px; /* Add space below the toggle */
+    display: block; /* Make the label block to ensure it takes full width */
+}
