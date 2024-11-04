@@ -26,6 +26,12 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    chrome.storage.local.get("defaultVolume", (data) => {
+        const initialVolume = data.defaultVolume !== undefined ? data.defaultVolume : 0.2; // Default volume
+        volumeSlider.value = initialVolume;
+        volumeText.textContent = `Volume: ${Math.round(initialVolume * 100)}%`;
+    });
+    
     // Get the current tab's hostname to use as a key
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
         const currentHost = new URL(tabs[0].url).hostname;

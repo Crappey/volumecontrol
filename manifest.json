@@ -22,6 +22,8 @@
     "gecko": {
       "id": "crappey@github"
       } 
-    }
-  }
+    },
+
+    "options_page": "options.html"
+}
   

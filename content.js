@@ -32,3 +32,9 @@ const observer = new MutationObserver(applyVolumeToMedia);
 observer.observe(document.body, { childList: true, subtree: true });
 
 applyVolumeToMedia();
+
+// Load default volume from storage and set it
+chrome.storage.local.get("defaultVolume", (data) => {
+    const defaultVolume = data.defaultVolume !== undefined ? data.defaultVolume : 0.2; // Default to 0.2
+    setVolume(defaultVolume); // Set the default volume on page load
+});
